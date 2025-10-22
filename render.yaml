@@ -2,7 +2,7 @@ services:
   - type: web
     name: n8n-free
     env: docker
-    plan: free
+    plan: free	
     region: frankfurt
     dockerfilePath: ./Dockerfile
     envVars:
