@@ -1,10 +1,11 @@
 services:
   - type: web
     name: n8n-free
-    env: docker
-    region: frankfurt  # change to your closest Render region if needed
+    env: node
     plan: free
-    autoDeploy: true
+    region: frankfurt  # or your nearest Render region
+    buildCommand: npm install --legacy-peer-deps
+    startCommand: npx n8n start
     envVars:
       - key: GENERIC_TIMEZONE
         value: Europe/Istanbul
