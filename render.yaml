@@ -1,13 +1,10 @@
 services:
   - type: web
     name: n8n-free
-    env: node
+    env: docker
     plan: free
-    region: frankfurt  # or your nearest Render region
-    buildCommand: npm install --legacy-peer-deps
-    startCommand: npx n8n start
-    runtime: node
-    nodeVersion: 22.11.0     # ✅ Forces Node 22 during build AND runtime
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: GENERIC_TIMEZONE
         value: Europe/Istanbul
