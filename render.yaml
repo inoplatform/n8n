@@ -6,9 +6,9 @@ services:
     region: frankfurt  # or your nearest Render region
     buildCommand: npm install --legacy-peer-deps
     startCommand: npx n8n start
+    runtime: node
+    nodeVersion: 22.11.0     # ✅ Forces Node 22 during build AND runtime
     envVars:
-      - key: NODE_VERSION
-        value: 22.11.0
       - key: GENERIC_TIMEZONE
         value: Europe/Istanbul
       - key: DB_TYPE
