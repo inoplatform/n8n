@@ -7,8 +7,8 @@ services:
     buildCommand: npm install --legacy-peer-deps
     startCommand: npx n8n start
     envVars:
-		- key: NODE_VERSION
-        value: 22.11.0 
+      - key: NODE_VERSION
+        value: 22.11.0
       - key: GENERIC_TIMEZONE
         value: Europe/Istanbul
       - key: DB_TYPE
