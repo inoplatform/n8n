@@ -1,16 +1,11 @@
-# Use Node 22 LTS (supported by n8n)
-FROM node:22.11.0
+# ✅ Use the official prebuilt image (no build, low RAM use)
+FROM n8nio/n8n:1.116.2
 
-WORKDIR /app
+# Set timezone (optional)
+ENV GENERIC_TIMEZONE=Europe/Istanbul
 
-COPY . .
-
-# Install pnpm (n8n uses it internally)
-RUN npm install -g pnpm
-
-# Install dependencies using pnpm
-RUN pnpm install --recursive --frozen-lockfile --ignore-scripts
-
+# Expose port
 EXPOSE 5678
 
-CMD ["npx", "n8n", "start"]
+# Default command
+CMD ["n8n", "start"]
